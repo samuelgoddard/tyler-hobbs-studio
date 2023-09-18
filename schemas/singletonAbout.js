@@ -1,6 +1,6 @@
 export default {
-  title: 'Home',
-  name: 'home',
+  title: 'About',
+  name: 'about',
   type: 'document',
   __experimental_actions: ['update', 'create', 'delete', 'publish'],
   fields: [
@@ -17,28 +17,6 @@ export default {
       name: 'title',
       type: 'string',
       validation: Rule => Rule.required()
-    },
-    {
-      title: 'Randomized Images Bucket',
-      name: 'randomisedImagesBucket',
-      type: 'array',
-      of: [
-        {type: 'defaultImage', title: 'Image'},
-      ],
-      options: {
-        layout: 'grid',
-      },
-    },
-    {
-      title: 'Randomized Headshots Bucket',
-      name: 'randomisedHeadshotsBucket',
-      type: 'array',
-      of: [
-        {type: 'defaultImage', title: 'Image'},
-      ],
-      options: {
-        layout: 'grid',
-      },
     },
     {
       title: 'SEO / Share Settings',

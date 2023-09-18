@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "shiftwalk-sanity-starter"
-  },
   "api": {
-    "projectId": "your-id-here",
+    "projectId": "6e7gp05s",
     "dataset": "production"
+  },
+  "project": {
+    "name": "Tyler Hobbs"
   },
   "plugins": [
     "@sanity/base",
@@ -17,7 +17,7 @@
     "media",
     "@sanity/production-preview",
     "vercel-deploy",
-    "order-documents"
+    "note-field"
   ],
   "env": {
     "development": {
