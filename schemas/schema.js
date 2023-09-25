@@ -12,6 +12,7 @@ import words from './words'
 import exhibitions from './exhibitions'
 import authors from './authors'
 import workCategories from './workCategories'
+// import workSeries from './workSeries'
 import wordsCategories from './wordsCategories'
 
 // Modular
@@ -35,6 +36,7 @@ export default createSchema({
     singletonContact,
     work,
     workCategories,
+    // workSeries,
     wordsCategories,
     words,
     exhibitions,

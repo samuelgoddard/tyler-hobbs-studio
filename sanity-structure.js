@@ -10,6 +10,7 @@ import {
   FiSmile,
   FiBookmark,
   FiMail,
+  FiLayers,
 } from 'react-icons/fi'
 
 import { getGlobalSlug, previewURL } from './utils/resolveProductionUrl'
@@ -48,6 +49,8 @@ export default () =>
             .title('Works')
             .items([
               S.listItem().title('Works').child(S.documentTypeList('work').title('Works')).icon(FiCamera),
+              // S.divider(),
+              // S.listItem().title('Series').child(S.documentTypeList('workSeries').title('Series')).icon(FiLayers),
               S.divider(),
               S.listItem().title('Categories').child(S.documentTypeList('workCategories').title('Categories')).icon(FiBookmark),
             ])),

@@ -1,4 +1,4 @@
-import { FiInfo, FiLink, FiImage, FiLayers } from 'react-icons/fi'
+import { FiInfo, FiLink, FiImage, FiLayers, FiLink2, FiExternalLink } from 'react-icons/fi'
 import slugify from '../utils/slugify'
 
 export default {
@@ -70,6 +70,64 @@ export default {
       type: "string",
       group: "info",
       validation: Rule => Rule.required()
+    },
+    {
+      title: 'Links',
+      name: 'links',
+      description: "Optionally add either internal or external links for this exhibition",
+      group: 'info',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          name: "link",
+          fields: [
+            {
+              title: 'Internal Link?',
+              name: 'internal',
+              description: 'Toggle this on if you want to link internally within the website, rather than link to an external source',
+              type: 'boolean',
+              validation: Rule => Rule.required()
+            },
+            {
+              title: 'Link Text',
+              name: 'linkText',
+              type: 'string',
+              validation: Rule => Rule.required()
+            },
+            {
+              name: 'internalLink',
+              type: 'reference',
+              hidden: ({ parent, value }) => !value && (parent?.internal == false),
+              title: 'Internal Link',
+              to: [
+                {type: 'work'},
+                {type: 'words'},
+                {type: 'exhibitions'},
+              ]
+            },
+            {
+              title: 'External Link',
+              hidden: ({ parent, value }) => !value && (parent?.internal == true),
+              name: 'externalLink',
+              type: 'url',
+            }
+          ],
+          preview: {
+            select: {
+              title: 'linkText',
+              internal: 'internal'
+            },
+            prepare ({ title, internal }) {
+              return {
+                title: title,
+                subtitle: internal ? 'Internal Link' : 'External Link', 
+                media: internal ? FiLink : FiExternalLink
+              }
+            }
+          }
+        }
+      ]
     },
     {
       title: "Teaser Image",
