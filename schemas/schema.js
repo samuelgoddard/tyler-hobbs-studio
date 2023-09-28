@@ -16,16 +16,17 @@ import workCategories from './workCategories'
 import wordsCategories from './wordsCategories'
 
 // Modular
-import modularTextBlock from './common/modularTextBlock'
-
-// Common
 import seo from './common/seo'
 import defaultImage from './common/defaultImage'
 import contentRich from './common/contentRich'
+import modularTextBlock from './common/modularTextBlock'
+import modularHeadingBlock from './common/modularHeadingBlock'
 import modularImageBlock from './common/modularImageBlock'
 import modularBlockquoteBlock from './common/modularBlockquoteBlock'
 import modularImageGridBlock from './common/modularImageGridBlock'
 import modularEmbedBlock from './common/modularEmbedBlock'
+import modularCodeBlock from './common/modularCodeBlock'
+import modularListBlock from './common/modularListBlock'
 
 export default createSchema({
   name: 'default',
@@ -44,10 +45,13 @@ export default createSchema({
     defaultImage,
     contentRich,
     modularTextBlock,
+    modularHeadingBlock,
     modularImageBlock,
     modularBlockquoteBlock,
     modularImageGridBlock,
     modularEmbedBlock,
+    modularCodeBlock,
+    modularListBlock,
     seo
   ]),
 })

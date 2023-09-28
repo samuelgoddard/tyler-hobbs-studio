@@ -95,10 +95,13 @@ export default {
       type: 'array',
       of: [
         {type: 'textBlock', title: 'Text'},
-        {type: 'imageBlock', title: 'Single Image'},
+        {type: 'headingBlock', title: 'Text Heading'},
+        {type: 'imageBlock', title: 'Full Width Single Image'},
         {type: 'imageGridBlock', title: 'Image Grid'},
         {type: 'blockquoteBlock', title: 'Quote'},
-        {type: 'embedBlock', title: 'Embed (Vimeo etc.)'}
+        {type: 'embedBlock', title: 'Embed (Vimeo etc.)'},
+        {type: 'codeBlock', title: 'Code'},
+        {type: 'listBlock', title: 'List'}
       ],
       group: "content"
     },

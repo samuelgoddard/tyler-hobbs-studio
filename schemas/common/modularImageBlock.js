@@ -1,7 +1,7 @@
 import { FiImage } from 'react-icons/fi'
 
 export default {
-  title: 'Image Block',
+  title: 'Full Width Single Image Block',
   type: 'object',
   name: 'imageBlock',
   icon: FiImage,
@@ -20,7 +20,7 @@ export default {
     prepare(selection) {
       const { image } = selection
       return {
-        title: 'Single Image Block',
+        title: 'Full Width Single Image Block',
         media: image
       }
     }

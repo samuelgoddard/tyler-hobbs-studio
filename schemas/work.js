@@ -43,6 +43,29 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: "Year",
+      name: "year",
+      type: "string",
+      group: "info",
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Dims (w x h)",
+      description: "The dims for this project, eg: '48 x 60” (121.9 X 152.4 cm)'",
+      name: "dims",
+      type: "string",
+      group: "info",
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Media",
+      description: "The media for this project, eg: 'Paint on panel with matching non-fungible token'",
+      name: "media",
+      type: "string",
+      group: "info",
+      validation: Rule => Rule.required()
+    },
+    {
       title: 'Category',
       name: 'category',
       type: 'reference',

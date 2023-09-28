@@ -1,10 +1,10 @@
-import { FiCode } from 'react-icons/fi'
+import { FiCast } from 'react-icons/fi'
 
 export default {
   title: 'Embed Block (Vimeo etc)',
   type: 'object',
   name: 'embedBlock',
-  icon: FiCode,
+  icon: FiCast,
   fields: [
     {
       title: 'Embed Code',

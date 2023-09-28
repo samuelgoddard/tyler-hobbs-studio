@@ -157,8 +157,13 @@ export default {
       type: 'array',
       of: [
         {type: 'textBlock', title: 'Text'},
+        {type: 'headingBlock', title: 'Text Heading'},
         {type: 'imageBlock', title: 'Single Image'},
-        {type: 'imageGridBlock', title: 'Image Grid'}
+        {type: 'imageGridBlock', title: 'Image Grid'},
+        {type: 'blockquoteBlock', title: 'Quote'},
+        {type: 'embedBlock', title: 'Embed (Vimeo etc.)'},
+        {type: 'codeBlock', title: 'Code'},
+        {type: 'listBlock', title: 'List'}
       ],
       group: "content"
     },

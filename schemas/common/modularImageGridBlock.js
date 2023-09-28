@@ -19,16 +19,31 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Width',
+      name: 'width',
+      type: 'string',
+      description: 'How much width should this grid fill? (Will default to Six)',
+      initialValue: "six",
+      options: {
+        list: [
+          { title: "Ten Cols", value: "ten" },
+          { title: "Six Cols", value: "six" },
+        ],
+      }
+    },
+    {
       title: 'Columns',
       name: 'columns',
       type: 'string',
-      description: 'How many columns should this grid have?',
+      description: 'How many columns should this grid have? (Will default to 3)',
       initialValue: "three",
       options: {
         list: [
+          { title: "One", value: "one" },
           { title: "Two", value: "two" },
           { title: "Three", value: "three" },
           { title: "Four", value: "four" },
+          { title: "Five", value: "five" },
         ],
       }
     },
@@ -36,13 +51,14 @@ export default {
   preview: {
     select: {
       images: 'images',
+      width: 'width',
       columns: 'columns'
     },
     prepare(selection) {
-      const { images, columns } = selection
+      const { images, columns, width } = selection
       return {
         title: `Images Grid Block (${images.length})`,
-        subtitle: `Columns: ${columns}`,
+        subtitle: `${width ? `Width: ${width} - ` : ``}Columns: ${columns}`,
         media: images[0]
       }
     }
