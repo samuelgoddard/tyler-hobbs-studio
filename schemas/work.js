@@ -13,6 +13,11 @@ export default {
       icon: FiInfo
     },
     {
+      title: 'Teaser',
+      name: 'teaser',
+      icon: FiImage
+    },
+    {
       title: 'Gallery Slides',
       name: 'gallery',
       icon: FiImage
@@ -106,9 +111,31 @@ export default {
     {
       title: "Gallery Slides",
       name: "gallerySlides",
-      type: "string",
+      type: "array",
       group: "gallery",
-      validation: Rule => Rule.required()
+      of: [
+        {
+          title: 'Item',
+          name: 'item',
+          type: 'object',
+          icon: FiImage,
+          fields: [
+            {
+              title: 'Text',
+              name: 'text',
+              type: 'string'
+            },
+          ]
+        }
+      ]
+    },
+    // Teaser
+    {
+      title: "Teaser Image",
+      description: "The teaser image that will display on the works index page",
+      name: "teaserImage",
+      type: "defaultImage",
+      group: "teaser"
     },
     // SEO
     {
