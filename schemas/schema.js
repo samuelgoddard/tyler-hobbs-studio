@@ -9,6 +9,7 @@ import singletonContact from './singletonContact'
 // Documents
 import work from './work'
 import words from './words'
+import pages from './pages'
 import exhibitions from './exhibitions'
 import authors from './authors'
 import workCategories from './workCategories'
@@ -37,6 +38,7 @@ export default createSchema({
     singletonAbout,
     singletonContact,
     work,
+    pages,
     workCategories,
     // workSeries,
     wordsCategories,

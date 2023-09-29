@@ -11,6 +11,7 @@ import {
   FiBookmark,
   FiMail,
   FiLayers,
+  FiBookOpen,
 } from 'react-icons/fi'
 
 import { getGlobalSlug, previewURL } from './utils/resolveProductionUrl'
@@ -71,6 +72,8 @@ export default () =>
             ])),
       S.divider(),            
       S.listItem().title('About').child(S.editor().id('about').schemaType('about').documentId('singleton-about').views(getPreview('about'))).icon(FiSmile),
+      S.divider(),
+      S.listItem().title('Page Builder').child(S.documentTypeList('pages').title('Page Builder')).icon(FiBookOpen),
       S.divider(),            
       S.listItem().title('Contact').child(S.editor().id('contact').schemaType('contact').documentId('singleton-contact').views(getPreview('contact'))).icon(FiMail),
     ]);
