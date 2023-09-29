@@ -96,7 +96,7 @@ export default {
       of: [
         {type: 'textBlock', title: 'Text'},
         {type: 'headingBlock', title: 'Text Heading'},
-        {type: 'imageBlock', title: 'Full Width Single Image'},
+        {type: 'imageBlock', title: 'Full Width Image'},
         {type: 'imageGridBlock', title: 'Image Grid'},
         {type: 'blockquoteBlock', title: 'Quote'},
         {type: 'embedBlock', title: 'Embed (Vimeo etc.)'},

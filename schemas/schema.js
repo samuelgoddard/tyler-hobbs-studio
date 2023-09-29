@@ -19,6 +19,7 @@ import wordsCategories from './wordsCategories'
 import seo from './common/seo'
 import defaultImage from './common/defaultImage'
 import contentRich from './common/contentRich'
+import contentSimple from './common/contentSimple'
 import modularTextBlock from './common/modularTextBlock'
 import modularHeadingBlock from './common/modularHeadingBlock'
 import modularImageBlock from './common/modularImageBlock'
@@ -44,6 +45,7 @@ export default createSchema({
     authors,
     defaultImage,
     contentRich,
+    contentSimple,
     modularTextBlock,
     modularHeadingBlock,
     modularImageBlock,

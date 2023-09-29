@@ -9,8 +9,7 @@ export default {
     {
       title: 'Text',
       name: 'text',
-      type: 'text',
-      rows: 3,
+      type: 'contentSimple',
       validation: Rule => Rule.required()
     }
   ],
@@ -20,10 +19,10 @@ export default {
     },
     prepare(selection) {
       const {text} = selection
-      
+
       return {
         title: 'Text Heading Block',
-        subtitle: text
+        subtitle: text[0].children[0].text
       }
     }
   }
