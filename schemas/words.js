@@ -1,4 +1,4 @@
-import { FiInfo, FiLink, FiLayers, FiImage } from 'react-icons/fi'
+import { FiInfo, FiLink, FiLayers, FiImage, FiExternalLink } from 'react-icons/fi'
 import slugify from '../utils/slugify'
 
 export default {
@@ -59,6 +59,17 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: "Last Updated Date",
+      name: "lastUpdatedDate",
+      description: "If set, will show a second date for when this articles was last updated",
+      type: "date",
+      options: {
+        dateFormat: 'DD MMMM YYYY',
+        calendarTodayLabel: 'Today'
+      },
+      group: "info"
+    },
+    {
       title: 'Author',
       name: 'author',
       type: 'reference',
@@ -73,6 +84,64 @@ export default {
       to: [{type: 'wordsCategories'}],
       group: "info",
       validation: Rule => Rule.required()
+    },
+    {
+      title: 'Links',
+      name: 'links',
+      description: "Optionally add either internal or external links for this article which will appear in the sideba",
+      group: 'info',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          name: "link",
+          fields: [
+            {
+              title: 'Internal Link?',
+              name: 'internal',
+              description: 'Toggle this on if you want to link internally within the website, rather than link to an external source',
+              type: 'boolean',
+              validation: Rule => Rule.required()
+            },
+            {
+              title: 'Link Text',
+              name: 'linkText',
+              type: 'string',
+              validation: Rule => Rule.required()
+            },
+            {
+              name: 'internalLink',
+              type: 'reference',
+              hidden: ({ parent, value }) => !value && (parent?.internal == false),
+              title: 'Internal Link',
+              to: [
+                {type: 'work'},
+                {type: 'words'},
+                {type: 'exhibitions'},
+              ]
+            },
+            {
+              title: 'External Link',
+              hidden: ({ parent, value }) => !value && (parent?.internal == true),
+              name: 'externalLink',
+              type: 'url',
+            }
+          ],
+          preview: {
+            select: {
+              title: 'linkText',
+              internal: 'internal'
+            },
+            prepare ({ title, internal }) {
+              return {
+                title: title,
+                subtitle: internal ? 'Internal Link' : 'External Link', 
+                media: internal ? FiLink : FiExternalLink
+              }
+            }
+          }
+        }
+      ]
     },
     {
       title: "Teaser Image",
@@ -104,6 +173,21 @@ export default {
         {type: 'listBlock', title: 'List'}
       ],
       group: "content"
+    },
+    {
+      title: 'Related Articles',
+      name: 'relatedArticles',
+      description: "Optionally manually relate articles to this article, if left blank will show a natural ascending list of 'next' articles",
+      group: 'info',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'words'}
+          ]
+        }
+      ]
     },
     {
       name: 'slug',

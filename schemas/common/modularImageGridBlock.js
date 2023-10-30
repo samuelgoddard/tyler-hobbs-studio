@@ -35,8 +35,8 @@ export default {
       title: 'Columns',
       name: 'columns',
       type: 'string',
-      description: 'How many columns should this grid have? (Will default to 3)',
-      initialValue: "three",
+      description: 'How many columns should this grid have? (Will default to 1)',
+      initialValue: "one",
       options: {
         list: [
           { title: "One", value: "one" },

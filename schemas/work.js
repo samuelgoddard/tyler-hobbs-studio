@@ -328,12 +328,13 @@ export default {
     select: {
       title: 'title',
       teaserImage: 'teaserImage',
-      year: 'year'
+      year: 'year',
+      cat: 'category.title'
     },
-    prepare ({ title, teaserImage, year }) {
+    prepare ({ title, teaserImage, year, cat}) {
       return {
         title: title,
-        subtitle: year,
+        subtitle: `${year}${cat ? ` - ${cat}` : ''}`,
         media: teaserImage
       }
     }

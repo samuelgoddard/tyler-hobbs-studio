@@ -10,6 +10,13 @@ export default {
       title: 'Code',
       name: 'code',
       type: 'code',
+      options: {
+        languageAlternatives: [
+          {title: 'Clojure', value: 'java'},
+          {title: 'Processing', value: 'sh'},
+          {title: 'Psuedo Code', value: 'csharp'},
+        ],
+      },
       validation: Rule => Rule.required()
     }
   ],
