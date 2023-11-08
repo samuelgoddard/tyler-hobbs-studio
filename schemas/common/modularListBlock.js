@@ -50,6 +50,7 @@ export default {
                 {type: 'work'},
                 {type: 'words'},
                 {type: 'exhibitions'},
+                {type: 'pages'}
               ]
             },
             {

@@ -15,6 +15,12 @@ export default {
       name: 'alt',
       type: 'string'
     },
+    // {
+    //   title: 'Vimeo Video Override URL',
+    //   description: 'Optionally override this image with a looping video from Vimeo',
+    //   name: 'vimeoVideoOverrideUrl',
+    //   type: 'url'
+    // },
     {
       title: 'Caption (Optional)',
       description: 'Optional supporting caption',
@@ -76,4 +82,18 @@ export default {
       ]
     }
   ]
+  // preview: {
+  //   select: {
+  //     asset: 'asset',
+  //     caption: 'caption',
+  //     vimeoVideoOverrideUrl: 'vimeoVideoOverrideUrl'
+  //   },
+  //   prepare({ asset }) {
+  //     return {
+  //       title: 'Image',
+  //       subtitle: 'Standard Image',
+  //       media: asset
+  //     }
+  //   }
+  // },
 }

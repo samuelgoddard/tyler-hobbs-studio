@@ -125,6 +125,7 @@ export default {
                 {type: 'work'},
                 {type: 'words'},
                 {type: 'exhibitions'},
+                {type: 'pages'}
               ]
             },
             {
@@ -200,17 +201,23 @@ export default {
           preview: {
             select: {
               teaserImage: 'teaserImage',
-              // layout1: 'layout1',
-              // layout2: 'layout2',
-              // layout3: 'layout3',
-              // layout4: 'layout4',
-              // layout5: 'layout5',
+              layout1: 'layout1',
+              layout2: 'layout2',
+              layout3: 'layout3',
+              layout4: 'layout4',
+              layout5: 'layout5',
               images: 'images'
             },
-            prepare ({ images, year, layout1 }) {
+            prepare ({ images, year, layout1, layout2, layout3, layout4, layout5 }) {
+              let currentLayout = 'No Layout'
+              images?.length == 1 && (currentLayout = layout1)
+              images?.length == 2 && (currentLayout = layout2)
+              images?.length == 3 && (currentLayout = layout3)
+              images?.length == 4 && (currentLayout = layout4)
+              images?.length == 5 && (currentLayout = layout5)
               return {
                 title: `Slide`,
-                subtitle: `${images?.length} Images`,
+                subtitle: `${images?.length} Images - Layout: ${currentLayout}`,
                 media: images && images[0]
               }
             }
@@ -222,7 +229,9 @@ export default {
               type: 'array',
               description: "The image(s) for this slide, the amount will dictate the configuration options below",
               of: [
-                {type: 'defaultImage', title: 'Image'},
+                {
+                  type: 'defaultImage', title: 'Image',
+                },
               ],
               options: {
                 layout: 'grid',
@@ -238,7 +247,6 @@ export default {
               initialValue: '4',
               options: {
                 list: [
-                  { title: "Full Screen", value: "full" },
                   { title: "4 Col", value: "4" },
                   { title: "12 Col", value: "12" },
                 ],
