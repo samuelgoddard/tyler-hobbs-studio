@@ -133,6 +133,9 @@ export default {
               hidden: ({ parent, value }) => !value && (parent?.internal == true),
               name: 'externalLink',
               type: 'url',
+              validation: Rule => Rule.uri({
+                scheme: ['http', 'https', 'mailto', 'tel']
+              })
             }
           ],
           preview: {
