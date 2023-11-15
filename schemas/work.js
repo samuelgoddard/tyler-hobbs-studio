@@ -204,23 +204,13 @@ export default {
           preview: {
             select: {
               teaserImage: 'teaserImage',
-              layout1: 'layout1',
-              layout2: 'layout2',
-              layout3: 'layout3',
-              layout4: 'layout4',
-              layout5: 'layout5',
+              containerWidth: 'containerWidth',
               images: 'images'
             },
-            prepare ({ images, year, layout1, layout2, layout3, layout4, layout5 }) {
-              let currentLayout = 'No Layout'
-              images?.length == 1 && (currentLayout = layout1)
-              images?.length == 2 && (currentLayout = layout2)
-              images?.length == 3 && (currentLayout = layout3)
-              images?.length == 4 && (currentLayout = layout4)
-              images?.length == 5 && (currentLayout = layout5)
+            prepare ({ images, containerWidth }) {
               return {
                 title: `Slide`,
-                subtitle: `${images?.length} Images - Layout: ${currentLayout}`,
+                subtitle: `${images?.length} Images - Layout: ${containerWidth && `${containerWidth} Columns`}`,
                 media: images && images[0]
               }
             }
@@ -242,76 +232,20 @@ export default {
               validation: Rule => Rule.required().min(1).max(5)
             },
             {
-              title: '1 Image Layout',
-              name: 'layout1',
+              title: 'Container Width',
+              name: 'containerWidth',
               type: 'string',
-              description: 'What layout should this slide use (options dictated by the amount of images above)',
-              hidden: ({ parent }) => parent?.images?.length != 1,
-              initialValue: '4',
+              description: 'How many columns should this slide fill',
+              initialValue: '6',
               options: {
                 list: [
-                  { title: "4 Col", value: "4" },
-                  { title: "12 Col", value: "12" },
+                  { title: "6", value: "6" },
+                  { title: "8", value: "8" },
+                  { title: "10", value: "10" },
+                  { title: "12", value: "12" },
                 ],
               }
-            },
-            {
-              title: '2 Image Layout',
-              name: 'layout2',
-              type: 'string',
-              description: 'What layout should this slide use (options dictated by the amount of images above)',
-              hidden: ({ parent }) => parent?.images?.length != 2,
-              initialValue: '4x2',
-              options: {
-                list: [
-                  { title: "4 Col x 2", value: "4x2" },
-                  { title: "6 Col + 3 Col", value: "6x3" },
-                  { title: "3 Col + 6 Col", value: "3x6" },
-                ],
-              }
-            },
-            {
-              title: '3 Image Layout',
-              name: 'layout3',
-              type: 'string',
-              description: 'What layout should this slide use (options dictated by the amount of images above)',
-              hidden: ({ parent }) => parent?.images?.length != 3,
-              initialValue: '4x3',
-              options: {
-                list: [
-                  { title: "4 Col x 3", value: "4x3" }
-                ],
-              }
-            },
-            {
-              title: '4 Image Layout',
-              name: 'layout4',
-              type: 'string',
-              description: 'What layout should this slide use (options dictated by the amount of images above)',
-              hidden: ({ parent }) => parent?.images?.length != 4,
-              initialValue: '4x2',
-              options: {
-                list: [
-                  { title: "4 Col + 2 Col x3", value: "4x2" },
-                  { title: "2 Col x3 + 4 Col", value: "2x4" }
-                ],
-              }
-            },
-            {
-              title: '5 Image Layout',
-              name: 'layout5',
-              type: 'string',
-              description: 'What layout should this slide use (options dictated by the amount of images above)',
-              hidden: ({ parent }) => parent?.images?.length != 5,
-              initialValue: '2x5',
-              options: {
-                list: [
-                  { title: "2 Col x 5", value: "2x5" },
-                  { title: "2 Col x 5 Split Left", value: "2x5Left" },
-                  { title: "2 Col x 5 Split Right", value: "2x5Right" },
-                ],
-              }
-            },
+            }
           ]
         }
       ],
