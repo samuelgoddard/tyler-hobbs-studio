@@ -12,6 +12,19 @@ export default {
       type: 'text',
       rows: 5,
       validation: Rule => Rule.required()
+    },
+    {
+      title: 'Width',
+      name: 'width',
+      type: 'string',
+      description: 'How many columns should this embed fill',
+      initialValue: '10',
+      options: {
+        list: [
+          { title: "6", value: "6" },
+          { title: "10", value: "10" },
+        ],
+      },
     }
   ],
   preview: {
