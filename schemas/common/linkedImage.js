@@ -7,19 +7,20 @@ export default {
     hotspot: true,
     metadata: ["lqip"],
   },
-  name: "defaultImage",
+  name: "linkedImage",
   fields: [
     {
-      title: 'Full Screen Toggle? (Optional)',
+      title: 'Full Screen Toggle?',
       description: 'Toggle this on to enable full screen zoom of this image',
       name: 'fullScreenToggle',
       type: 'boolean'
     },
     {
-      title: 'Link To (Optional)',
-      description: 'Optionally choose to link this image somewhere -- NOTE: This will be overriden in certain templated areas, for example things like "Teaser Images" where they already link somewhere',
+      title: 'Links to...',
+      description: 'Choose where this image links to',
       name: 'linksTo',
       type: 'reference',
+      title: 'Internal Link',
       to: [
         {type: 'work'},
         {type: 'words'},

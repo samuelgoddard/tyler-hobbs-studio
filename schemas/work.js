@@ -1,4 +1,4 @@
-import { FiImage, FiInfo, FiLink, FiExternalLink } from 'react-icons/fi'
+import { FiImage, FiInfo, FiLink, FiExternalLink, FiVideo } from 'react-icons/fi'
 import slugify from '../utils/slugify'
 
 export default {
@@ -197,7 +197,7 @@ export default {
       group: "gallery",
       of: [
         {
-          title: 'Item',
+          title: 'Image Slide',
           name: 'item',
           type: 'object',
           icon: FiImage,
@@ -209,7 +209,7 @@ export default {
             },
             prepare ({ images, containerWidth }) {
               return {
-                title: `Slide`,
+                title: `Image(s) Slide`,
                 subtitle: `${images?.length} Images - Layout: ${containerWidth && `${containerWidth} Columns`}`,
                 media: images && images[0]
               }
@@ -262,7 +262,65 @@ export default {
               }
             }
           ]
-        }
+        },
+        {
+          title: 'Video Slide',
+          name: 'itemVideo',
+          type: 'object',
+          icon: FiVideo,
+          preview: {
+            select: {
+              teaserImage: 'teaserImage',
+              containerWidth: 'containerWidth',
+              images: 'images'
+            },
+            prepare ({ images, containerWidth }) {
+              return {
+                title: `Video Slide`,
+                subtitle: `Layout: ${containerWidth && `${containerWidth} Columns`}`,
+              }
+            }
+          },
+          fields: [
+            {
+              title: 'Video Embed',
+              name: 'videoEmbed',
+              type: 'text',
+              description: "The embed code from Vimeo",
+              validation: Rule => Rule.required()
+            },
+            {
+              title: 'Container Width',
+              name: 'containerWidth',
+              type: 'string',
+              description: 'How many columns should this slide fill',
+              initialValue: '6',
+              options: {
+                list: [
+                  { title: "4", value: "4" },
+                  { title: "6", value: "6" },
+                  { title: "8", value: "8" },
+                  { title: "10", value: "10" },
+                  { title: "12", value: "12" },
+                ],
+              }
+            },
+            {
+              title: 'Alignment',
+              name: 'alignment',
+              type: 'string',
+              description: 'How should the images align?',
+              initialValue: 'center',
+              options: {
+                list: [
+                  { title: "Left", value: "left" },
+                  { title: "Center", value: "center" },
+                  { title: "Right", value: "right" }
+                ],
+              }
+            }
+          ]
+        },
       ],
     },
     // Teaser

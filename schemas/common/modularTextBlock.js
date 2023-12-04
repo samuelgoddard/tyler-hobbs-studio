@@ -32,16 +32,18 @@ export default {
           name: 'content',
           icon: FiPenTool,
           fields: [
+            { type: 'string', title: 'Number', name: 'number', description: 'The number of this note, eg: "2"' },
             { type: 'contentSimple', title: 'Text', name: 'content' }
           ],
           preview: {
             select: {
-              content: 'content'
+              content: 'content',
+              number: 'number'
             },
             prepare(selection) {
-              const {content} = selection
+              const {content, number } = selection
               return {
-                title: 'Text Block',
+                title: `Text Block${number ? ` (${number})` : ''}`,
                 subtitle: `${content[0].children[0].text}`
               }
             }
