@@ -1,4 +1,4 @@
-import { FiImage, FiInfo, FiLink, FiExternalLink, FiVideo } from 'react-icons/fi'
+import { FiImage, FiInfo, FiLink, FiExternalLink, FiVideo, FiGrid } from 'react-icons/fi'
 import slugify from '../utils/slugify'
 
 export default {
@@ -260,7 +260,98 @@ export default {
                   { title: "Right", value: "right" }
                 ],
               }
+            },
+          ]
+        },
+        {
+          title: 'Customizable Image Slide',
+          name: 'itemCustomizable',
+          type: 'object',
+          icon: FiGrid,
+          preview: {
+            select: {
+              teaserImage: 'teaserImage',
+              containerWidth: 'containerWidth',
+              images: 'images'
+            },
+            prepare ({ images, containerWidth }) {
+              return {
+                title: `Image(s) Slide`,
+                subtitle: `${images?.length} Images - Layout: ${containerWidth && `${containerWidth} Columns`}`,
+                media: images && images[0]
+              }
             }
+          },
+          fields: [
+            {
+              title: 'Image(s)',
+              name: 'images',
+              type: 'array',
+              description: "The image(s) for this slide, the amount will dictate the configuration options below",
+              of: [
+                {
+                  type: 'object',
+                  title: 'Item',
+                  name: "item",
+                  fields: [
+                    {
+                      title: "Image",
+                      name: "image",
+                      type: "defaultImage"
+                    },
+                    {
+                      title: "Fill Mode?",
+                      name: "fillMode",
+                      initialValue: false,
+                      description: "Toggling this on will make this image fill it's space",
+                      type: "boolean"
+                    }
+                  ],
+                  preview: {
+                    select: {
+                      image: 'image',
+                      fillMode: 'fillMode'
+                    },
+                    prepare ({ image, fillMode }) {
+                      return {
+                        title: `Image`,
+                        subtitle: `Fill mode: ${fillMode}`,
+                        media: image && image
+                      }
+                    }
+                  },
+                },
+              ],
+              validation: Rule => Rule.required().min(1).max(5)
+            },
+            {
+              title: 'Layout',
+              name: 'layout',
+              type: 'string',
+              description: 'What layout should this use? Refer to Figma file for options',
+              initialValue: '5050',
+              options: {
+                list: [
+                  { title: "50/50", value: "5050" },
+                  { title: "70/30", value: "7030" },
+                  { title: "30/70", value: "3070" },
+                ],
+              }
+            },
+            // {
+            //   title: 'Alignment',
+            //   name: 'alignment',
+            //   type: 'string',
+            //   description: 'How should the images align?',
+            //   initialValue: 'center',
+            //   options: {
+            //     list: [
+            //       { title: "Left", value: "left" },
+            //       { title: "Center", value: "center" },
+            //       { title: "Right", value: "right" }
+            //     ],
+            //   }
+            // },
           ]
         },
         {
@@ -318,7 +409,7 @@ export default {
                   { title: "Right", value: "right" }
                 ],
               }
-            }
+            },
           ]
         },
       ],
