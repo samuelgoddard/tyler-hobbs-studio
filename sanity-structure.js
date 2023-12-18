@@ -49,6 +49,10 @@ export default () =>
           S.list()
             .title('Works')
             .items([
+              S.listItem().title('Index').child(S.editor().id('workIndex').schemaType('workIndex').documentId('workIndex').views(getPreview('workIndex'))).icon(FiHome),
+
+              S.divider(),
+
               S.listItem().title('Works').child(S.documentTypeList('work').title('Works')).icon(FiCamera),
               // S.divider(),
               // S.listItem().title('Series').child(S.documentTypeList('workSeries').title('Series')).icon(FiLayers),

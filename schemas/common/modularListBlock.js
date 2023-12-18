@@ -48,6 +48,7 @@ export default {
               title: 'Internal Link',
               to: [
                 {type: 'work'},
+                {type: 'workIndex'},
                 {type: 'words'},
                 {type: 'exhibitions'},
                 {type: 'pages'}

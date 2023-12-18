@@ -335,7 +335,18 @@ export default {
                   { title: "50/50", value: "5050" },
                   { title: "70/30", value: "7030" },
                   { title: "30/70", value: "3070" },
+                  { title: "Auto Flex", value: "auto" },
                 ],
+              }
+            },
+            {
+              name: 'noteWarn',
+              type: 'note',
+              hidden: ({ parent, value }) => !value && (parent?.images.length < 3),
+              options: {
+                tone: 'caution',
+                headline: 'Warning',
+                message: 'This configuration may not produce optimal results. Please test via preview mode before deploying.'
               }
             },
             // {

@@ -15,6 +15,7 @@ import authors from './authors'
 import workCategories from './workCategories'
 // import workSeries from './workSeries'
 import wordsCategories from './wordsCategories'
+import workIndex from './workIndex'
 
 // Modular
 import seo from './common/seo'
@@ -42,6 +43,7 @@ export default createSchema({
     workCategories,
     // workSeries,
     wordsCategories,
+    workIndex,
     words,
     exhibitions,
     authors,
