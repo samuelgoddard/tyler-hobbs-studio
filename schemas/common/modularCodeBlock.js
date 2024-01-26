@@ -12,6 +12,7 @@ export default {
       type: 'code',
       options: {
         languageAlternatives: [
+          {title: 'Java', value: 'java'},
           {title: 'Clojure', value: 'java'},
           {title: 'Processing', value: 'sh'},
           {title: 'Psuedo Code', value: 'csharp'},

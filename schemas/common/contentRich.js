@@ -41,6 +41,7 @@ export default {
             type: 'object',
             icon: FiLink,
             title: 'Internal link',
+            validation: Rule => Rule.required(),
             fields: [
               {
                 name: 'reference',

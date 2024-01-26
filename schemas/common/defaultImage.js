@@ -5,7 +5,7 @@ export default {
   type: 'image',
   options: {
     hotspot: true,
-    metadata: ["lqip"],
+    metadata: ["lqip", "palette"],
   },
   name: "defaultImage",
   fields: [
