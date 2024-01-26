@@ -16,6 +16,12 @@ export default {
       type: 'boolean'
     },
     {
+      title: 'Remove from index? (Optional)',
+      description: 'Toggle this on to remove this image from the "index" view of works',
+      name: 'removeFromIndex',
+      type: 'boolean'
+    },
+    {
       title: 'Link To (Optional)',
       description: 'Optionally choose to link this image somewhere -- NOTE: This will be overriden in certain templated areas, for example things like "Teaser Images" where they already link somewhere',
       name: 'linksTo',
