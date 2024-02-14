@@ -30,6 +30,11 @@ export default {
               validation: Rule => Rule.required()
             },
             {
+              title: 'Text (Rich)',
+              name: 'textRich',
+              type: 'contentSimple',
+            },
+            {
               title: 'Year',
               name: 'year',
               type: 'string',
