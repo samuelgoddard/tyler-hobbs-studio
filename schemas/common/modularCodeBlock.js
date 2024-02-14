@@ -1,3 +1,4 @@
+import 'ace-builds/src-noconflict/mode-clojure'
 import { FiCode } from 'react-icons/fi'
 
 export default {
@@ -13,8 +14,8 @@ export default {
       options: {
         languageAlternatives: [
           {title: 'Java', value: 'java'},
-          {title: 'Clojure', value: 'java'},
-          {title: 'Processing', value: 'sh'},
+          {title: 'Clojure', value: 'clojure', mode: 'clojure'},
+          {title: 'Processing', value: 'processing', mode: 'java'},
           {title: 'Psuedo Code', value: 'csharp'},
         ],
       },
