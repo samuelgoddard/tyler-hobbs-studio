@@ -31,15 +31,6 @@ export default {
   fields: [
     // Info
     {
-      name: 'note',
-      type: 'note',
-      group: "info",
-      options: {
-        headline: 'Dev Note',
-        message: 'Active Development - API May Change, message Sam if anything looks odd!'
-      }
-    },
-    {
       title: "Title",
       description: "The name of this entry",
       name: "title",

@@ -7,14 +7,6 @@ export default {
   __experimental_actions: ['update', 'create', 'delete', 'publish'],
   fields: [
     {
-      name: 'note',
-      type: 'note',
-      options: {
-        headline: 'Dev Note',
-        message: 'Active Development - API May Change, message Sam if anything looks odd!'
-      }
-    },
-    {
       title: 'Title',
       name: 'title',
       type: 'string',

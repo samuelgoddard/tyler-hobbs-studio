@@ -30,6 +30,7 @@ import modularImageGridBlock from './common/modularImageGridBlock'
 import modularEmbedBlock from './common/modularEmbedBlock'
 import modularCodeBlock from './common/modularCodeBlock'
 import modularListBlock from './common/modularListBlock'
+import modularJumpNavSectionBlock from './common/modularJumpNavSectionBlock'
 
 export default createSchema({
   name: 'default',
@@ -51,6 +52,7 @@ export default createSchema({
     contentRich,
     contentSimple,
     modularTextBlock,
+    modularJumpNavSectionBlock,
     modularHeadingBlock,
     modularImageBlock,
     modularBlockquoteBlock,
