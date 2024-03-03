@@ -261,6 +261,20 @@ export default {
                 ],
               }
             },
+            {
+              title: 'Tall Edge Case (?)',
+              name: 'tallEdgeCase',
+              type: 'boolean',
+              description: 'Toggle this on if the image(s) in this slide have particularly tall aspect ratios, it will attempt to better fit the image on the front-end',
+              initialValue: false,
+            },
+            {
+              title: 'Very Tall Edge Case (?)',
+              name: 'veryTallEdgeCase',
+              type: 'boolean',
+              description: 'Toggle this on if the image(s) in this slide have VERY tall aspect ratios (eg: Orchids-0), it will attempt to better fit the image on the front-end',
+              initialValue: false,
+            },
           ]
         },
         {
