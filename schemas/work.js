@@ -1,10 +1,15 @@
 import { FiImage, FiInfo, FiLink, FiExternalLink, FiVideo, FiGrid } from 'react-icons/fi'
 import slugify from '../utils/slugify'
+import {
+  orderRankField,
+  orderRankOrdering,
+} from '@sanity/orderable-document-list';
 
 export default {
   title: "Work",
   name: 'work',
   type: "document",
+  orderings: [orderRankOrdering],
   groups: [
     {
       title: 'Info',
@@ -38,6 +43,7 @@ export default {
       group: "info",
       validation: Rule => Rule.required()
     },
+    orderRankField({ type: 'work' }),
     {
       title: "Year",
       name: "year",

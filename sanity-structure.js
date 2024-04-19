@@ -1,5 +1,6 @@
 import S from "@sanity/desk-tool/structure-builder";
 import IframePreview from './preview/IFramePreview'
+import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
 
 import {
   FiHome,
@@ -12,6 +13,7 @@ import {
   FiMail,
   FiLayers,
   FiBookOpen,
+  FiList,
 } from 'react-icons/fi'
 
 import { getGlobalSlug, previewURL } from './utils/resolveProductionUrl'
@@ -58,6 +60,45 @@ export default () =>
               // S.listItem().title('Series').child(S.documentTypeList('workSeries').title('Series')).icon(FiLayers),
               S.divider(),
               S.listItem().title('Categories').child(S.documentTypeList('workCategories').title('Categories')).icon(FiBookmark),
+              S.divider(),
+              orderableDocumentListDeskItem({
+                type: 'work',
+                title: 'Digital Work (Ordering)',
+                icon: FiList,
+                // Required if using multiple lists of the same 'type'
+                id: 'digital-work-ordering',
+                // See notes on adding a `filter` below
+                filter: `category->slug.current == $slug`,
+                params: {
+                  slug: 'digital'
+                },
+              }),
+              S.divider(),
+              orderableDocumentListDeskItem({
+                type: 'work',
+                title: 'Physical Work (Ordering)',
+                icon: FiList,
+                // Required if using multiple lists of the same 'type'
+                id: 'physical-work-ordering',
+                // See notes on adding a `filter` below
+                filter: `category->slug.current == $slug`,
+                params: {
+                  slug: 'physical'
+                },
+              }),
+              S.divider(),
+              orderableDocumentListDeskItem({
+                type: 'work',
+                title: 'Spacial Work (Ordering)',
+                icon: FiList,
+                // Required if using multiple lists of the same 'type'
+                id: 'spacial-work-ordering',
+                // See notes on adding a `filter` below
+                filter: `category->slug.current == $slug`,
+                params: {
+                  slug: 'spatial'
+                },
+              }),
             ])),
       S.divider(),
       S.listItem().title('Exhibitions').child(S.documentTypeList('exhibitions').title('Exhibitions')).icon(FiPackage),

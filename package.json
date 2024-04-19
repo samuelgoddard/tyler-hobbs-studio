@@ -23,6 +23,7 @@
     "@sanity/default-layout": "^2.29.7",
     "@sanity/default-login": "^2.3.2",
     "@sanity/desk-tool": "^2.29.7",
+    "@sanity/orderable-document-list": "^0.1.0",
     "@sanity/production-preview": "^2.29.3",
     "@sanity/vision": "^2.3.2",
     "ace-builds": "^1.32.6",
