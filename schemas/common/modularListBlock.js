@@ -40,16 +40,23 @@ export default {
               type: 'string',
             },
             {
+              title: 'Link?',
+              name: 'link',
+              description: 'Toggle this on if you want this list item to be a link',
+              type: 'boolean',
+              defaultValue: true
+            },
+            {
               title: 'Internal Link?',
               name: 'internal',
               description: 'Toggle this on if you want to link internally within the website, rather than link to an external source',
               type: 'boolean',
-              validation: Rule => Rule.required()
+              hidden: ({ parent, value }) => !value && (parent?.link == false),
             },
             {
               name: 'internalLink',
               type: 'reference',
-              hidden: ({ parent, value }) => !value && (parent?.internal == false),
+              hidden: ({ parent, value }) => !value && (parent?.link == false || parent?.internal == false),
               title: 'Internal Link',
               to: [
                 {type: 'work'},
@@ -61,7 +68,7 @@ export default {
             },
             {
               title: 'External Link',
-              hidden: ({ parent, value }) => !value && (parent?.internal == true),
+              hidden: ({ parent, value }) => !value && (parent?.link == false || parent?.internal == true),
               name: 'externalLink',
               type: 'url',
               validation: Rule => Rule.uri({
