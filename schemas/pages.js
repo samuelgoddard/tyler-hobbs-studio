@@ -72,6 +72,7 @@ export default {
         {type: 'imageGridBlock', title: 'Image Grid'},
         {type: 'blockquoteBlock', title: 'Quote'},
         {type: 'embedBlock', title: 'Embed (Vimeo etc.)'},
+        {type: 'embedTypeformBlock', title: 'Embed (Typeform)'},
         {type: 'codeBlock', title: 'Code'},
         {type: 'listBlock', title: 'List'}
       ]

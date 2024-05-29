@@ -28,6 +28,7 @@ import modularImageBlock from './common/modularImageBlock'
 import modularBlockquoteBlock from './common/modularBlockquoteBlock'
 import modularImageGridBlock from './common/modularImageGridBlock'
 import modularEmbedBlock from './common/modularEmbedBlock'
+import modularEmbedTypeformBlock from './common/modularEmbedTypeformBlock'
 import modularCodeBlock from './common/modularCodeBlock'
 import modularListBlock from './common/modularListBlock'
 import modularJumpNavSectionBlock from './common/modularJumpNavSectionBlock'
@@ -58,6 +59,7 @@ export default createSchema({
     modularBlockquoteBlock,
     modularImageGridBlock,
     modularEmbedBlock,
+    modularEmbedTypeformBlock,
     modularCodeBlock,
     modularListBlock,
     seo
